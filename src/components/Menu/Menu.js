@@ -1,16 +1,6 @@
 import React from 'react'
-import {Navbar, NavDropdown, Nav, Form, FormControl, Button, ProgressBar} from 'react-bootstrap';
-import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
 import './menu.css';
 import { IoMenu, IoHome, IoPerson, IoStorefront, IoBag } from "react-icons/io5";
-
-/* import logoMenu from './images/icons/menu_black_24dp.svg';
-import logoHome from './images/icons/home_black_24dp.svg';
-import logoShop from './images/icons/shopping_cart_black_24dp.svg';
-import logoContact from './images/icons/person_black_24dp.svg';
-import logoCarrito from './images/icons/shopping_bag_black_24dp.svg'; */
-
-
 
 
 
@@ -26,6 +16,21 @@ const openHome = (e) => {console.log(e.target)};
 const openShop = (e)=>{console.log(e.target)};
 const openContact = (e)=>{console.log(e.target)};
 
+let flagBag = false;
+const openBag = ()=>{
+  let bag = document.getElementById("bag-mobile");
+  if (!flagBag) {
+    bag.classList.add("activar-animacion-carrito");
+    bag.classList.remove("desactivar-animacion-carrito");
+    flagBag = true;
+  } else {
+    bag.classList.add("desactivar-animacion-carrito");
+    bag.classList.remove("activar-animacion-carrito");
+    flagBag = false;
+  }
+};
+
+
 export default function Menu() {
     return (
         <>
@@ -38,6 +43,7 @@ export default function Menu() {
                 <a className="menu-link menu-link-hide"> Tienda </a>
                 <a className="menu-link menu-link-hide"> Contacto </a>
             </div>
+            <div> <IoBag className="icons-desktop menu-link-hide"/> </div>
         </header>
 
         <div className="menu-btn-mobile" id="btn-menu-mobile" onClick={abrirMenuMobile}>
@@ -54,9 +60,12 @@ export default function Menu() {
               <IoPerson className="icons-mobile-link"/>
             </div>
         </div>
-        <div className="btn-carrito-mobil" id="carrito-compras-mobile">
+        <div className="btn-carrito-mobil" id="carrito-compras-mobile" onClick={openBag}>
           <IoBag className="icons-mobile"/>
         </div>
+        <div className="contenedor-carrito" id="bag-mobile">
+        </div>
+        <div className="contador-items-bag">0</div>
         </>
         
     )
