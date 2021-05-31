@@ -1,0 +1,18 @@
+.container-home{
+    height: 100vh;
+    background-color: rgb(140, 0, 255);
+}
+
+@media (min-width : 450px) {
+    .container-home{
+        height: 100vh;
+        background-color: aqua;
+    }
+}
+
+@media (min-width : 700px) {
+    .container-home{
+        height: 100vh;
+        background-color: rgb(251, 255, 0);
+    }
+}
