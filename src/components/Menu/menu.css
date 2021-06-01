@@ -33,173 +33,182 @@
     display: none;
 }
 
-@media (max-width : 550px) {
+.container-menu-mobile {
+    display: none;
+}
+
+.contenedor-carrito {
+    display: none;
+}
+
+@media (max-width:550px) {
 
     .contenedor-menu {
         background-color: red;
         justify-content: center;
+        top: 0;
+        height: 63px;
     }
 
     .menu-link-hide {
         display: none;
     }
 
-    .menu-btn-mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        margin: 0 0 5px 5px;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        background-color: #968787;
-        box-shadow: 0px 0px 5px 2px #000000;
-        z-index: 999999;
-        transition: transform .5s ease-in-out;
-
-    }
-
-    .active {
-        transform: rotate(360deg);
-    }
-
-    .contenedor-links-mobile {
-        position: fixed;
-        bottom: 25px;
-        margin: 0 0 5px 5px;
-        border-radius: 25px 25px 0 0;
-        background-color: #df92e4;
-        width: 50px;
-        height: 190px;
-        transform: scaleY(0);
-        transition: all 1s ease;
-        transform-origin: bottom;
-        transition-delay: .5s;
-        box-shadow: 0px 0px 5px 2px #000000;
-    }
-
-    .contenedor-links-mobile-active {
-        transform: scaleY(1);
-    }
-
-    .menu-mobile-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 35px;
-        height: 35px;
-        border-radius: 50px;
-        left: 7.5px;
-        top: 25px;
-        position: relative;
-        margin-bottom: 10px;
-    }
-
-    .btn-carrito-mobil {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        margin: 0 5px 5px 0;
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        background-color: #ec6ccb;
-        box-shadow: 0px 0px 5px 2px #330327;
-        z-index: 999999;
-        transition: transform .5s ease-in-out;
-    }
-
     .icons-mobile {
-        transform: scale(2.5);
         display: block;
+        transform: scale(2);
+        position: relative;
+        top: 5px;
+        color: #407bc5;
+    }
+
+    .icon-carrito {
+        right: -10px;
+        color: #3aa73a;
     }
 
     .icons-mobile-link {
-        transform: scale(1.5);
         display: block;
+        transform: scale(1.3);
+        color: #2c7384;
     }
 
     .icons-mobile-link:hover {
-        color: white;
+        color: #203135;
     }
 
-    .contenedor-carrito {
-        background-color: blanchedalmond;
-        position: absolute;
-        bottom: 5px;
-        right: 7px;
-        margin: 0 5px 5px 0;
-        border-radius: 10px 10px 25px 10px;
-        box-shadow: 0px 0px 8px black;
-        transform: all 1s;
-    }
-
-    .activar-animacion-carrito {
-        animation-name: openBag;
-        animation-duration: 1.5s;
-        animation-timing-function: ease-in;
-        animation-fill-mode: forwards;
-    }
-
-    .desactivar-animacion-carrito {
-        animation-name: closeBag;
-        animation-duration: 1.5s;
-        animation-timing-function: ease-in;
-        animation-fill-mode: forwards;
-    }
-
-    .contador-items-bag {
+    .container-menu-mobile {
         display: block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50px;
-        border: 2px solid #e6dbdb;
-        border-style: outset;
-        background-color: blanchedalmond;
+        position: fixed;
+        bottom: 0px;
+        /* height: 30px; */
+        width: 95vw;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(226 226 226);
+        margin: calc((100% - 95%)/2);
+        padding: 10px;
+        z-index: 99999;
+    }
+
+    .text-menu-mobile {
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: 7px;
+
+    }
+
+    .text-carrito-mobile {
+        left: 3px;
+    }
+
+    .text-mobile-menu {
+        left: -6px;
+    }
+
+    .contenedor-links-mobile {
         position: absolute;
-        bottom: 41px;
-        right: 7px;
-        z-index: 9999999;
-        box-shadow: 0px 0px 9px 1px black;
+        bottom: 0%;
+        /* height: 200px; */
+        width: 47.5vw;
+        border-radius: 40px;
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(226 226 226);
+        margin: calc((100% - 95%)/2);
+        padding: 10px;
+        left: 25%;
+        z-index: 9;
+        /* transition: all 1s; */
+    }
+
+    .activar-contenedor-menu-link {
+        animation-name: openContenedorMenu;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+
+    .desactivar-contenedor-menu-link {
+        animation-name: closeContenedorMenu;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+
+    .container-kart {
+        display: block;
+        background-color: #97d493;
+        width: 90vw;
+        height: 0;
+        position: absolute;
+        bottom: 0px;
+        margin: calc((100% - 90%)/2);
+        border-radius: 40px;
+    }
+    .active-kart{
+        animation-name: abrirKart;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+    }
+    .deactive-kart{
+        animation-name: closekart;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
     }
 }
 
-@keyframes openBag {
+@keyframes openContenedorMenu {
+
+    0%{
+        bottom: 0%;
+    }
+
+    100%{
+        bottom: 8.5%;
+    }
+}
+
+@keyframes closeContenedorMenu {
+    0%{
+        bottom: 8.5%;
+    }
+
+    100%{
+        bottom: 0%;
+    }
+}
+
+@keyframes abrirKart {
+
     0% {
-        width: 0px;
-        height: 0px;
-    }
-
-    60% {
-        width: 285px;
-        height: 225px;
-    }
-
-    90% {
-        width: 275px;
-        height: 215px;
+        height: 0;
+        bottom: 0px;
     }
 
     100% {
-        width: 280px;
-        height: 220px;
-    }
 
+        height: 300px;
+        bottom: 53px;
+    }
 }
 
-@keyframes closeBag {
+@keyframes closekart {
     0% {
-        width: 280px;
-        height: 220px;
+        height: 300px;
+        bottom: 53px;
     }
 
     100% {
-        width: 0px;
-        height: 0px;
+        height: 0;
+        bottom: 0;
     }
 }
+
+
+
