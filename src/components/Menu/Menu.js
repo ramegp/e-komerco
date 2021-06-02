@@ -3,7 +3,7 @@ import './menu.css';
 import { IoMenu, IoHome, IoPerson, IoStorefront, IoBag } from "react-icons/io5";
 import { BiGridAlt, BiCart, BiHomeAlt, BiStore, BiUser } from "react-icons/bi";
 import ItemCart from '../Cart/ItemCart';
-/* import Main from '../Main' */
+import { Link } from 'react-router-dom';
 
 let flagMenu = false;
 function abrirMenuMobile() {
@@ -21,35 +21,6 @@ function abrirMenuMobile() {
     }
     
 }
-
-const openHome = (e) => {
-  let linkHome = document.getElementById("home");
-  let linkContac = document.getElementById("about");
-  let linkShop = document.getElementById("shop");
-  linkContac.style.display ="none";
-  linkShop.style.display ="none"
-  linkHome.style.display = "block"
-  window.location.href ="#home"
-};
-const openShop = (e)=>{
-  let linkHome = document.getElementById("home");
-  let linkContac = document.getElementById("about");
-  let linkShop = document.getElementById("shop");
-  linkHome.style.display ="none";
-  linkContac.style.display = "none";
-  linkShop.style.display ="block"
-  window.location.href ="#about";
-};
-const openContact = (e)=>{
-  
-  let linkHome = document.getElementById("home");
-  let linkContac = document.getElementById("about");
-  let linkShop = document.getElementById("shop");
-  linkHome.style.display ="none";
-  linkShop.style.display ="none"
-  linkContac.style.display = "block";
-  window.location.href ="#about";
-};
 
 let flagBag = false;
 const openBag = ()=>{
@@ -74,11 +45,11 @@ export default function Menu() {
                 <a className="menu-link"> E-Komerco </a>
             </div>
             <div className="menu-links">
-                <a className="menu-link menu-link-hide"> Inicio </a>
-                <a className="menu-link menu-link-hide"> Tienda </a>
-                <a className="menu-link menu-link-hide"> Contacto </a>
+                <Link to="/home"> <a className="menu-link menu-link-hide"> Inicio </a> </Link>
+                <Link to="/shop"><a className="menu-link menu-link-hide"> Tienda </a></Link>
+                <Link to="/about"><a className="menu-link menu-link-hide"> Contacto </a></Link>
             </div>
-            <div> <IoBag className="icons-desktop menu-link-hide"/> </div>
+            <div> <BiCart className="icons-desktop menu-link-hide"/> </div>
         </header>
 
         <div className=" container-menu-mobile">
@@ -93,26 +64,28 @@ export default function Menu() {
         </div>
 
         <div className="contenedor-links-mobile" id="links-mobile">
-            <div className="menu-mobile-icon" onClick={openHome}>
-              <BiHomeAlt className="icons-mobile-link"/>
-            </div>
-            <div className="menu-mobile-icon" onClick={openShop}>
-              <BiStore className="icons-mobile-link"/>
-            </div>
-            <div className="menu-mobile-icon" onClick={openContact} id="icon-about">
-              <BiUser className="icons-mobile-link"/>
-            </div>
+            <Link to="/home">
+              <div className="menu-mobile-icon">
+                <BiHomeAlt className="icons-mobile-link"/>
+              </div>
+            </Link>
+            <Link to="/shop">
+              <div className="menu-mobile-icon">
+                <BiStore className="icons-mobile-link"/>
+              </div>
+            </Link>
+            <Link to="/about">
+              <div className="menu-mobile-icon" id="icon-about">
+                <BiUser className="icons-mobile-link"/>
+              </div>
+            </Link>
+            
         </div>
         <div className="container-kart" id="kart-mobile">
           <ItemCart name="Burger" precio="$500"/>
           <ItemCart name="Burger" precio="$500"/>
           <ItemCart name="Burger" precio="$500"/>
         </div>
-
-
-        {/* <div className="contenedor-carrito" id="bag-mobile"></div> */}
-        
-        {/* <Main/> */}
         </>
         
     )
