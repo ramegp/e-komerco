@@ -1,18 +1,33 @@
 
 import './App.css';
-/* import Menu from './components/Menu/Menu'; */
+import Menu from './components/Menu/Menu';
 /* import Home from './components/Home/Home'; */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Main from './components/Main';
+
+import { 
+  BrowserRouter as Router,
+  Link,
+  Switch,
+  Route
+ } from 'react-router-dom';
+
+//Pages
+import Home from './components/pages/Home';
+import Shop from './components/pages/Shop';
+import About from './components/pages/About';
+
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-      {/* <Menu /> */}
-      {/* <Home /> */}
-
-    </div>
+    <Router>
+      <Menu/>
+      <Switch>
+        <Route exact path="/home" component={Home}/>
+        <Route exact path="/shop" component={Shop}/>
+        <Route exact path="/about" component={About}/>
+      </Switch>
+      
+    </Router>
   );
 }
 
