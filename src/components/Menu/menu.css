@@ -86,7 +86,7 @@
         border-radius: 40px;
         display: flex;
         justify-content: space-around;
-        background-color: rgb(226 226 226);
+        background-color: rgb(239 232 232);
         margin: calc((100% - 95%)/2);
         padding: 10px;
         z-index: 99999;
@@ -110,14 +110,14 @@
     }
 
     .contenedor-links-mobile {
-        position: absolute;
+        position: fixed;
         bottom: 0%;
         /* height: 200px; */
         width: 47.5vw;
         border-radius: 40px;
         display: flex;
         justify-content: space-around;
-        background-color: rgb(226 226 226);
+        background-color: rgb(239 232 232);
         margin: calc((100% - 95%)/2);
         padding: 10px;
         left: 25%;
@@ -141,13 +141,14 @@
 
     .container-kart {
         display: block;
-        background-color: #97d493;
+        background-color: #acffa7;
         width: 90vw;
         height: 0;
-        position: absolute;
+        position: fixed;
         bottom: 0px;
         margin: calc((100% - 90%)/2);
         border-radius: 40px;
+        overflow: hidden;
     }
     .active-kart{
         animation-name: abrirKart;

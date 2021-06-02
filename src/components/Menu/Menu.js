@@ -2,7 +2,8 @@ import React from 'react'
 import './menu.css';
 import { IoMenu, IoHome, IoPerson, IoStorefront, IoBag } from "react-icons/io5";
 import { BiGridAlt, BiCart, BiHomeAlt, BiStore, BiUser } from "react-icons/bi";
-
+import ItemCart from '../Cart/ItemCart';
+/* import Main from '../Main' */
 
 let flagMenu = false;
 function abrirMenuMobile() {
@@ -21,9 +22,34 @@ function abrirMenuMobile() {
     
 }
 
-const openHome = (e) => {console.log(e.target)};
-const openShop = (e)=>{console.log(e.target)};
-const openContact = (e)=>{console.log(e.target)};
+const openHome = (e) => {
+  let linkHome = document.getElementById("home");
+  let linkContac = document.getElementById("about");
+  let linkShop = document.getElementById("shop");
+  linkContac.style.display ="none";
+  linkShop.style.display ="none"
+  linkHome.style.display = "block"
+  window.location.href ="#home"
+};
+const openShop = (e)=>{
+  let linkHome = document.getElementById("home");
+  let linkContac = document.getElementById("about");
+  let linkShop = document.getElementById("shop");
+  linkHome.style.display ="none";
+  linkContac.style.display = "none";
+  linkShop.style.display ="block"
+  window.location.href ="#about";
+};
+const openContact = (e)=>{
+  
+  let linkHome = document.getElementById("home");
+  let linkContac = document.getElementById("about");
+  let linkShop = document.getElementById("shop");
+  linkHome.style.display ="none";
+  linkShop.style.display ="none"
+  linkContac.style.display = "block";
+  window.location.href ="#about";
+};
 
 let flagBag = false;
 const openBag = ()=>{
@@ -32,12 +58,10 @@ const openBag = ()=>{
     bag.classList.add("active-kart");
     bag.classList.remove("deactive-kart");
     flagBag = true;
-    console.log(flagBag)
   } else {
     bag.classList.add("deactive-kart");
     bag.classList.remove("active-kart");
     flagBag = false;
-    console.log(flagBag)
   }
 };
 
@@ -75,13 +99,20 @@ export default function Menu() {
             <div className="menu-mobile-icon" onClick={openShop}>
               <BiStore className="icons-mobile-link"/>
             </div>
-            <div className="menu-mobile-icon" onClick={openContact}>
+            <div className="menu-mobile-icon" onClick={openContact} id="icon-about">
               <BiUser className="icons-mobile-link"/>
             </div>
         </div>
-        <div className="container-kart" id="kart-mobile"></div>
+        <div className="container-kart" id="kart-mobile">
+          <ItemCart name="Burger" precio="$500"/>
+          <ItemCart name="Burger" precio="$500"/>
+          <ItemCart name="Burger" precio="$500"/>
+        </div>
+
+
         {/* <div className="contenedor-carrito" id="bag-mobile"></div> */}
         
+        {/* <Main/> */}
         </>
         
     )
