@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom';
 
 let flagMenu = false;
 function abrirMenuMobile() {
-    let btnMenu = document.getElementById("btn-menu-mobile");
-
     let MostrarMenu = document.getElementById("links-mobile");
     if (!flagMenu) {
       MostrarMenu.classList.add("activar-contenedor-menu-link");
@@ -26,8 +24,12 @@ let flagBag = false;
 const openBag = ()=>{
   let bag = document.getElementById("kart-mobile");
   if (!flagBag) {
+    bag.classList.remove("active-bag-desktop");
+    bag.classList.remove("deactive-bag-desktop");
+    bag.classList.remove("position");
     bag.classList.add("active-kart");
     bag.classList.remove("deactive-kart");
+    
     flagBag = true;
   } else {
     bag.classList.add("deactive-kart");
@@ -36,6 +38,24 @@ const openBag = ()=>{
   }
 };
 
+
+let flagBagDesktop = false;
+const openBagDesktop = () => {
+  let bagDesktop = document.getElementById("kart-mobile");
+
+  if (!flagBagDesktop) {
+    bagDesktop.classList.remove("active-kart");
+    bagDesktop.classList.remove("deactive-kart");
+    bagDesktop.classList.add("position");
+    bagDesktop.classList.add("active-bag-desktop");
+    bagDesktop.classList.remove("deactive-bag-desktop");
+    flagBagDesktop = true;
+  } else {
+    bagDesktop.classList.add("deactive-bag-desktop");
+    bagDesktop.classList.remove("active-bag-desktop");
+    flagBagDesktop = false;
+  }
+}
 
 export default function Menu() {
     return (
@@ -49,7 +69,7 @@ export default function Menu() {
                 <Link to="/shop"><a className="menu-link menu-link-hide"> Tienda </a></Link>
                 <Link to="/about"><a className="menu-link menu-link-hide"> Contacto </a></Link>
             </div>
-            <div> <BiCart className="icons-desktop menu-link-hide"/> </div>
+            <div> <BiCart className="icons-desktop menu-link-hide" onClick={openBagDesktop}/></div>
         </header>
 
         <div className=" container-menu-mobile">
@@ -81,7 +101,7 @@ export default function Menu() {
             </Link>
             
         </div>
-        <div className="container-kart" id="kart-mobile">
+        <div className="container-kart position" id="kart-mobile">
           <ItemCart name="Burger" precio="$500"/>
           <ItemCart name="Burger" precio="$500"/>
           <ItemCart name="Burger" precio="$500"/>

@@ -4,9 +4,11 @@
     align-items: center;
     background-color: #564d4d;
     text-align: left;
-    height: 47px;
+    height: 73px;
     font-family: monospace;
     position: fixed;
+    top: 0;
+    z-index: 99;
 }
 
 .menu-link {
@@ -40,7 +42,56 @@
 .contenedor-carrito {
     display: none;
 }
+.container-kart{
+    /* right: 0;
+    top: -50%; */
+    background-color: rgb(230 253 230);
+    width: 50%;
+    height: 350px;
+    position: fixed;
+    margin-right: 10px;
+    border-radius: 25px;
+    z-index: 22;
+    transition: all 1s;
+}
+.position{
+    right: 0;
+    top: -50%;
+}
 
+.active-bag-desktop{
+    animation-name: openBagDesktop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+.deactive-bag-desktop{
+    animation-name: closeBagDesktop;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+@keyframes openBagDesktop {
+    0%{
+        top: -50%;
+        right: 0;
+    }
+    100%{
+        top: 10%;
+        right: 0;
+    }
+}
+
+@keyframes closeBagDesktop {
+    0%{
+        top: 10%;
+        right: 0;
+    }
+    100%{
+        top: -50%;
+        right: 0;
+    }
+}
 @media (max-width:550px) {
 
     .contenedor-menu {
@@ -48,6 +99,7 @@
         justify-content: center;
         top: 0;
         height: 63px;
+        z-index: 999;
     }
 
     .menu-link-hide {
@@ -121,7 +173,7 @@
         margin: calc((100% - 95%)/2);
         padding: 10px;
         left: 25%;
-        z-index: 9;
+        z-index: 25;
         /* transition: all 1s; */
     }
 
@@ -141,11 +193,11 @@
 
     .container-kart {
         display: block;
-        background-color: #acffa7;
+        background: linear-gradient(180deg, rgb(214 227 230 / 75%) 0%, rgb(183 184 185 / 95%) 56%);
         width: 90vw;
         height: 0;
         position: fixed;
-        bottom: 0px;
+        /* bottom: 0px; */
         margin: calc((100% - 90%)/2);
         border-radius: 40px;
         overflow: hidden;

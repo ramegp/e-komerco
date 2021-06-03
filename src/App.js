@@ -12,9 +12,9 @@ import {
  } from 'react-router-dom';
 
 //Pages
-import Home from './components/pages/Home';
-import Shop from './components/pages/Shop';
-import About from './components/pages/About';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import About from './pages/About';
 
 
 function App() {
