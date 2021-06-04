@@ -5,6 +5,7 @@ import { BiGridAlt, BiCart, BiHomeAlt, BiStore, BiUser } from "react-icons/bi";
 import ItemCart from '../Cart/ItemCart';
 import { Link } from 'react-router-dom';
 
+
 let flagMenu = false;
 function abrirMenuMobile() {
     let MostrarMenu = document.getElementById("links-mobile");
@@ -102,9 +103,11 @@ export default function Menu() {
             
         </div>
         <div className="container-kart position" id="kart-mobile">
-          <ItemCart name="Burger" precio="$500"/>
-          <ItemCart name="Burger" precio="$500"/>
-          <ItemCart name="Burger" precio="$500"/>
+          <div className="cart-titulo">Contenido Carrito</div>
+          <ItemCart name="Burger" precio="500"/>
+          <ItemCart name="Papas" precio="25.5"/>
+          <ItemCart name="Gaseosa" precio="50"/>
+          <button className="btn btn-primary btn-order">Hacer Pedido</button>
         </div>
         </>
         

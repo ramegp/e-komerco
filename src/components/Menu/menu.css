@@ -45,14 +45,15 @@
 .container-kart{
     /* right: 0;
     top: -50%; */
-    background-color: rgb(230 253 230);
+    /* background-color: rgb(230 253 230);
     width: 50%;
     height: 350px;
     position: fixed;
     margin-right: 10px;
     border-radius: 25px;
     z-index: 22;
-    transition: all 1s;
+    transition: all 1s; */
+    display: none;
 }
 .position{
     right: 0;
@@ -192,7 +193,7 @@
     }
 
     .container-kart {
-        display: block;
+        display: flex;
         background: linear-gradient(180deg, rgb(214 227 230 / 75%) 0%, rgb(183 184 185 / 95%) 56%);
         width: 90vw;
         height: 0;
@@ -201,6 +202,9 @@
         margin: calc((100% - 90%)/2);
         border-radius: 40px;
         overflow: hidden;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .active-kart{
         animation-name: abrirKart;
@@ -213,6 +217,18 @@
         animation-duration: 1s;
         animation-timing-function: ease-in;
         animation-fill-mode: forwards;
+    }
+    .cart-titulo{
+        text-align: center;
+        font-size: 21px;
+        letter-spacing: 2px;
+        border-bottom: 2px solid;
+        text-shadow: 0px 0px 3px #ffffff;
+    }
+    .btn-order{
+        width: 70%;
+        margin: 10px calc((30%-20px)/2);
+        
     }
 }
 

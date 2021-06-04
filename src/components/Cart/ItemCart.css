@@ -6,10 +6,10 @@
     margin-top: 30px;
 }
 
-.cart-item-btns{
+.cart-item-controls{
     display: flex;
     flex-direction: row;
-    width: 10%;
+    /* width: 10%; */
     justify-content: space-between;
 }
 
@@ -20,7 +20,18 @@
     animation-delay: 2s;
     animation-fill-mode: forwards;
 }
-
+.cart-item-amount{
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    padding: 2px;
+    width: 20px;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+.cart-item-icon-add{
+    margin-right: 5px;
+}
 @keyframes openCartItem {
     0%{
         opacity: 0;
