@@ -1,7 +1,7 @@
 import React from 'react';
-import '../components/Shop/Shop.css';
-import Card from '../components/Cards/CardsItem';
-import Card2 from '../components/Cards/Cards2'
+import './Shop.css';
+import Card from '../../components/Cards/CardsItem';
+import Card2 from '../../components/Cards/Cards2'
 
 function Shop() {
     return (

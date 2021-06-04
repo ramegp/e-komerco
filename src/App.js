@@ -12,9 +12,9 @@ import {
  } from 'react-router-dom';
 
 //Pages
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import About from './pages/About';
+import Home from './pages/Home/Home';
+import Shop from './pages/Shop/Shop';
+import About from './pages/About/About';
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
     <Router>
       <Menu/>
       <Switch>
+        <Route exact path="/" component={Home}/>
         <Route exact path="/home" component={Home}/>
         <Route exact path="/shop" component={Shop}/>
         <Route exact path="/about" component={About}/>
