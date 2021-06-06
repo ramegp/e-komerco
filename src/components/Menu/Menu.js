@@ -104,8 +104,8 @@ export default function Menu() {
         </div>
         <div className="container-kart position" id="kart-mobile">
           <div className="cart-titulo">Contenido Carrito</div>
-          <ItemCart name="Burger" precio="500"/>
-          <ItemCart name="Papas" precio="25.5"/>
+          <ItemCart name="Burger con queso" precio="500"/>
+          <ItemCart name="Papas fritas" precio="25.5"/>
           <ItemCart name="Gaseosa" precio="50"/>
           <button className="btn btn-primary btn-order">Hacer Pedido</button>
         </div>

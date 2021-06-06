@@ -1,34 +1,61 @@
-import './ItemCart.css';
-import React, {useState} from 'react';
+import "./ItemCart.css";
+import React, { useState } from "react";
 import { BiTrash, BiPlus, BiMinus } from "react-icons/bi";
 
+import foto from '../../assets/images/hamburger.jpg';
+
+const MIN = 1;
+const MAX = 10;
 
 function ItemCart(props) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   function handleSubtract() {
-    count >= 1 ? setCount(count -1) : setCount(0);
+    count >= MIN ? setCount(count - 1) : setCount(0);
   }
 
   function handleAdd() {
-    setCount(count +  1)
+    count < MAX ? setCount(count + 1): setCount(MAX);
   }
   function handleTrash(event) {
-    console.log(event.target)
+    console.log(event.target);
   }
 
-    return (
-        <div className="container-item" id="cart-item">
-            <div>{props.name}</div>
-            <div>$ {parseFloat(props.precio)*count}</div>
-            
-            <div className="cart-item-controls">
-              <div onClick={handleSubtract}><BiMinus/></div>
-              <div className="cart-item-amount">{count}</div>
-              <div className="cart-item-icon-add" onClick={handleAdd}><BiPlus/></div>
-              <div onClick={handleTrash}><BiTrash/></div>
-            </div>
+  return (
+    <div className="container-item" id="cart-item">
+      <div className="col-2 cart-item-img">
+        <image className="item-img" src={foto} />
+      </div>
+      <div className="col-9">
+        <div className="cart-item-titulo">
+          <div>{props.name}</div>
+          <div> $ {parseFloat(props.precio) * count}</div>
+          
         </div>
-    )
+
+        <div className="cart-item-controls">
+          <div className="cart-item-amount d-flex justify-content-between">Cantidad <span>{count}</span></div>
+          {/* <div className="d-flex justify-content-center">
+            <div className="cart-item-icon" onClick={handleSubtract}>
+              <BiMinus />
+            </div>
+            <div className="cart-item-icon cart-item-icon-add" onClick={handleAdd}>
+              <BiPlus />
+            </div>
+            <div className="cart-item-icon" onClick={handleTrash}>
+              <BiTrash />
+            </div>
+          </div>
+           */}
+
+           <div className="btn-group d-flex justify-content-between">
+             <button className="btn text-light" onClick={handleSubtract}><BiMinus /></button>
+             <button className="btn text-light" onClick={handleTrash}><BiTrash /></button>
+             <button className="btn text-light" onClick={handleAdd}><BiPlus /></button>
+           </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default ItemCart
+export default ItemCart;
