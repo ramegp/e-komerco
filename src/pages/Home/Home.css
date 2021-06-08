@@ -2,7 +2,10 @@
     height: 200vh;
     background-color: rgb(140, 0, 255);
 }
-
+.btn-whatsapp{
+    position: relative;
+    top: 50%;
+}
 @media (min-width : 450px) {
     .container-home{
         height: 100vh;
