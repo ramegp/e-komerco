@@ -17,6 +17,8 @@ import Shop from './pages/Shop/Shop';
 import About from './pages/About/About';
 
 
+localStorage.setItem("cart",JSON.stringify([]));
+
 function App() {
   return (
     <Router>

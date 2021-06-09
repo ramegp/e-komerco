@@ -17,3 +17,6 @@ a {
 .fa {
     color: red
 }
+.card-body-margin{
+    margin: .3rem 0;
+}

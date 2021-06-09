@@ -1,0 +1,32 @@
+[
+    {
+        "name":"Apple iPhone XR (Red, 128 GB)",
+        "description":"128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display",
+        "category":"Mobile",
+        "price":45000
+    },
+    {
+        "name":"Samsung Galaxy A52 128 GB awesome black 6 GB RAM",
+        "description":"128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display",
+        "category":"Mobile",
+        "price": 55999
+    },
+    {
+        "name":"Samsung Galaxy A01 Core 16 GB negro 1 GB RAM",
+        "description":"128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display",
+        "category":"Mobile",
+        "price":14999
+    },
+    {
+        "name":"Samsung Galaxy A02 64 GB negro 3 GB RAM",
+        "description":"128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display",
+        "category":"Mobile",
+        "price":18999
+    },
+    {
+        "name":"Samsung Galaxy S21 Ultra 5G 256 GB phantom black 12 GB RAM",
+        "description":"128 GB ROM | 15.49 cm (6.1 inch) Display 12MP Rear Camera | 7MP Front Camera A12 Bionic Chip Processor | Gorilla Glass with high quality display",
+        "category":"Mobile",
+        "price":180100
+    }
+]
