@@ -27,7 +27,7 @@ function CardsItem(props) {
         <div className="mr-2 mb-3 mb-lg-0">
           {" "}
           <img
-            src="https://i.imgur.com/5Aqgz7o.jpg"
+            src={props.img}
             width="150"
             height="150"
             alt=""
@@ -63,7 +63,7 @@ function CardsItem(props) {
             <i className="fa fa-star"></i> <i className="fa fa-star"></i>{" "}
             <i className="fa fa-star"></i> <i className="fa fa-star"></i>{" "}
           </div>
-          <button type="button" className="btn btn-warning mt-4 text-white" onClick={handleAddItem}>
+          <button type="button" className="btn btn-warning mt-4 text-white" onClick={props.function}>
             <i className="icon-cart-add mr-2"></i>Agregar</button>
         </div>
       </div>

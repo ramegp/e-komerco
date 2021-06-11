@@ -4,6 +4,7 @@ import { IoMenu, IoHome, IoPerson, IoStorefront, IoBag } from "react-icons/io5";
 import { BiGridAlt, BiCart, BiHomeAlt, BiStore, BiUser } from "react-icons/bi";
 import ItemCart from '../Cart/ItemCart';
 import { Link } from 'react-router-dom';
+import ShowItemsBag from '../ShowItemsBag/ShowItemsBag'
 
 
 let flagMenu = false;
@@ -106,7 +107,8 @@ export default function Menu() {
 
       <div className="container-cart-desktop" id="cart-desktop">
         <div className="cart-titulo">Contenido Carrito</div>
-        {itemsCart.map((prod) => {
+
+      {/*         {itemsCart.map((prod) => {
         return (
           <>
             <ItemCart 
@@ -115,8 +117,8 @@ export default function Menu() {
             />
           </>
         );
-        })}
-
+        })} */}
+        <ShowItemsBag />
         {/* <ItemCart name="Burger con queso" precio={500} />
         <ItemCart name="Papas fritas" precio={50.25} />
         <ItemCart name="Gaseosa" precio={5.50} /> */}
